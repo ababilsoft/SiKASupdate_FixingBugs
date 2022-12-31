@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DashboardActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/homecard"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/homecard"/>
+            <LinearLayout
+                android:id="@+id/homecard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:elevation="@dimen/_18sdp"
+                android:background="@color/netral_100"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/bt_beranda"
+                        style="@style/Widget.AppCompat.ActionButton.Overflow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:drawableTop="@drawable/ic_home"
+                        android:fontFamily="@font/poppins"
+                        android:text="Beranda"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primary_400"
+                        android:textDirection="firstStrong"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/bt_transaksi"
+                        style="@style/Widget.AppCompat.ActionButton.Overflow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_toRightOf="@id/bt_beranda"
+                        android:drawableTop="@drawable/ic_shop"
+                        android:text="Transaksi"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primary_400"
+                        android:textDirection="firstStrong"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/bt_utang"
+                        style="@style/Widget.AppCompat.ActionButton.Overflow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_toRightOf="@id/bt_transaksi"
+                        android:drawableTop="@drawable/ic_hutang"
+                        android:text="Hutang"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primary_400"
+                        android:textDirection="firstStrong"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/bt_profile"
+                        style="@style/Widget.AppCompat.ActionButton.Overflow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toRightOf="@id/bt_utang"
+                        android:drawableTop="@drawable/ic_profile"
+                        android:text="Profile"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primary_400"
+                        android:textDirection="firstStrong"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

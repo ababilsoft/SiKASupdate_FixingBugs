@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.utang.UtangPiutangFragment">
+
+    <android.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <LinearLayout
+        android:id="@+id/ll_kategori_catatan_keuangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="@dimen/_30sdp"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_utang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvUtangSaya"
+                        style="@style/Body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:textColor="@color/success_500"
+                        app:drawableStartCompat="@drawable/ic_arrow_circle_up_g"
+                        app:drawableTint="@color/success_500" />
+
+                    <TextView
+                        style="@style/Caption2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:gravity="center"
+                        android:text="@string/utang_saya"
+                        android:textColor="@color/netral_400" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp"
+                    android:background="@color/primary_100" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvUtangTeman"
+                        style="@style/Body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:textColor="@color/danger_500"
+                        app:drawableStartCompat="@drawable/ic_arrow_circle_down_r"
+                        app:drawableTint="@color/danger_500" />
+
+                    <TextView
+                        style="@style/Caption2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:gravity="center"
+                        android:text="@string/utang_teman"
+                        android:textColor="@color/netral_400" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/primary_100" />
+
+            <RelativeLayout
+                android:id="@+id/bt_riwayat_utang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="13dp"
+                android:layout_marginVertical="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                tools:targetApi="m">
+
+                <ImageView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_money_time"
+                    app:tint="@color/primary_500" />
+
+                <TextView
+
+                    style="@style/Caption2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ivIcon"
+                    android:text="@string/riwayat_utang_piutang"
+                    android:textColor="@color/primary_500" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_arrow_right" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <HorizontalScrollView
+        android:id="@+id/ll_utang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/card_utang">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btSemua"
+                style="@style/Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/thebutt_primari100"
+                android:paddingHorizontal="6dp"
+                android:text="@string/semua"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_300" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btUtangSaya"
+                style="@style/Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_tersier"
+                android:paddingHorizontal="6dp"
+                android:text="@string/utang_saya"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_300" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btUtangTeman"
+                style="@style/Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_tersier"
+                android:paddingHorizontal="6dp"
+                android:text="@string/utang_teman"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_300" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btLunas"
+                style="@style/Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_tersier"
+                android:paddingHorizontal="6dp"
+                android:text="@string/lunas"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_300" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btBLunas"
+                style="@style/Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_tersier"
+                android:paddingHorizontal="6dp"
+                android:text="@string/belum_lunas"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_300" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/garis"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@color/primary_100"
+        app:layout_constraintTop_toBottomOf="@id/ll_utang" />
+
+    <LinearLayout
+        android:id="@+id/ll_utang_dua"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/garis">
+
+        <EditText
+            android:id="@+id/etCariCatatan"
+            style="@style/Poppins2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableEnd="@drawable/ic_search_normal"
+            android:ems="10"
+            android:hint="@string/cari_transaksi"
+            android:inputType="textCapWords"
+            android:paddingHorizontal="10dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btFilter"
+            style="@style/Poppins2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/button_tersier"
+            android:drawableEnd="@drawable/ic_filter"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/primary_300"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:text="@string/filter"
+            android:textAllCaps="false"
+            android:textColor="@color/primary_300"
+            android:visibility="gone"
+            tools:targetApi="m" />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefesh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_utang_dua">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_utang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingTop="10dp"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_utang" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/primary_500"
+        android:src="@drawable/add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/netral_0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_15sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12ssp">
+
+        <TextView
+            android:id="@+id/tvBatal"
+            style="@style/BodyPoppins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_ripple_blue"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/_10ssp"
+            android:text="@string/batal"
+            android:textColor="@color/purple_500" />
+
+        <TextView
+            style="@style/BodyPoppins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_10ssp"
+            android:text="@string/pilih_tanggal"
+            android:textColor="@color/netral_500" />
+
+        <TextView
+            android:id="@+id/tvOK"
+            style="@style/P2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/textview_ripple_blue"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/_10ssp"
+            android:text="@string/ok"
+            android:textColor="@color/purple_500" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bulan"
+            android:textAlignment="center"
+            android:textColor="@color/netral_300" />
+
+        <TextView
+            style="@style/Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tahun"
+            android:textAlignment="center"
+            android:textColor="@color/netral_300" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <NumberPicker
+            android:id="@+id/npBulan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:theme="@style/ThemeOverlay.NumberPicker" />
+
+        <NumberPicker
+            android:id="@+id/npTahun"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:theme="@style/ThemeOverlay.NumberPicker" />
+    </LinearLayout>
+</LinearLayout>

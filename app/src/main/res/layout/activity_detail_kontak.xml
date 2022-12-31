@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.DetailKontakActivity">
+
+
+    <android.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@color/netral_100" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/H"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/profile_kontak"
+                android:textColor="@color/netral_100" />
+        </RelativeLayout>
+
+
+    </android.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/ll_profile"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/my_toolbar"
+        android:background="?attr/colorPrimary"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp">
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+        android:src="@drawable/ellipse_363_png" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivAkun"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@+id/ll_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-30dp"
+        android:backgroundTint="@color/netral_500"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/img_2233"
+        tools:targetApi="m" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivAkun"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/P1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/informasi_umum"
+            android:textColor="@color/warning_900" />
+
+
+        <TextView
+            style="@style/P2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/nama_kontak"
+            android:textColor="@color/netral_800" />
+
+        <EditText
+            android:id="@+id/etNamaKontak"
+            style="@style/BodyPoppins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/login_text_field"
+            android:hint="@string/masukkan_nama"
+            android:inputType="text"
+            android:padding="@dimen/_10sdp" />
+
+        <TextView
+            style="@style/P2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/nomor_handphone"
+            android:textColor="@color/netral_800" />
+
+        <EditText
+            android:id="@+id/etNoHp"
+            style="@style/BodyPoppins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/login_text_field"
+            android:hint="@string/masukkan_nomor_handphone"
+            android:inputType="number"
+            android:padding="@dimen/_10sdp" />
+
+        <TextView
+            style="@style/P2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/alamat"
+            android:textColor="@color/netral_800" />
+
+        <EditText
+            android:id="@+id/etAlamat"
+            style="@style/BodyPoppins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/login_text_field"
+            android:hint="@string/masukkan_alamat"
+            android:inputType="text"
+            android:padding="@dimen/_10sdp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+<!--        <TextView-->
+<!--            android:id="@+id/btHapusKontak"-->
+<!--            style="@style/P3"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:foreground="?android:attr/selectableItemBackground"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="@dimen/_10sdp"-->
+<!--            android:text="@string/hapus_kontak"-->
+<!--            android:textColor="@color/danger_500"-->
+<!--            tools:targetApi="m" />-->
+
+
+        <TextView
+            android:id="@+id/btUpdateKontak"
+            style="@style/P3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/update_kontak"
+            android:textColor="@color/success_500"
+            tools:targetApi="m" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:background="@color/black_50" />
+
+    <TextView
+        android:id="@+id/tv_lainnya"
+        style="@style/P3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="29dp"
+        android:text="@string/detail_hutang_piutang"
+        android:textColor="@color/netral_800" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/stroke_blue"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Poppins2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tanggal_transaksi"
+                    android:textColor="@color/netral_400" />
+
+                <TextView
+                    android:id="@+id/tvtglTransaksi"
+                    style="@style/Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2 Januari 2022"
+                    android:textColor="@color/netral_500" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Poppins2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/nominal"
+                    android:textColor="@color/netral_400" />
+
+                <TextView
+                    android:id="@+id/tvNominal"
+                    style="@style/Caption2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="Rp60.000"
+                    android:textColor="@color/danger_500" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Poppins2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/catatan"
+                android:textColor="@color/netral_400" />
+
+            <TextView
+                android:id="@+id/tvCatatan"
+                style="@style/Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Utang Belanja"
+                android:textColor="@color/netral_500" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvHapus"
+            style="@style/P3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/stroke_red"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:text="@string/hapus"
+            android:textColor="@color/danger_400" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btUbah"
+            style="@style/P3"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/thebutt_blue"
+            android:gravity="center"
+            android:text="@string/ubah"
+            android:textAllCaps="false"
+            android:textColor="@color/netral_0" />
+
+    </LinearLayout>
+</LinearLayout>

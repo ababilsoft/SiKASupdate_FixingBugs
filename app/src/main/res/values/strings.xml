@@ -1,0 +1,196 @@
+<resources>
+    <string name="app_name">SiKAS</string>
+    <string name="teks_welcome2">Kamu gak usah repot-repot lagi untuk \n mencatat hutang piutang kamu di buku. Sikas akan membantu pencatatan Hutang</string>
+    <string name="teks_welcome1">Laporan keuangan memudahkan kamu \n melihat pengeluaran dan keuangan kamu dengan mudah</string>
+    <string name="teks_welcome3">Keuangan kamu akan terorganisir secara rapi dan kamu juga bisa membuat perencanaan keuangan</string>
+    <string name="lewati">Lewati</string>
+    <string name="lanjut">Lanjut</string>
+    <string name="title1">Laporan Keuangan</string>
+    <string name="title2">Pencatatan Hutang Piutang</string>
+    <string name="title3">Perencanaan Keuangan</string>
+    <string name="selamat_datang">Selamat Datang!</string>
+    <string name="username">Username</string>
+    <string name="masukkan_username">Masukkan Username</string>
+    <string name="password">Password</string>
+    <string name="masukkan_password">Masukkan Password</string>
+    <string name="lupa_password">Lupa Password ?</string>
+    <string name="masuk">Masuk</string>
+    <string name="daftar_baru">Daftar Baru</string>
+    <string name="daftar_pengguna_baru">Daftar Pengguna Baru</string>
+    <string name="lengkapi_data_anda_utk_mnjd_member_baru">Lengkapi informasi Anda untuk menjadi member baru</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="masukkan_nama">Masukkan Nama</string>
+    <string name="dgn_mendaftar_anda_mematuhi"><![CDATA[Dengan mendaftar Anda menyetujui Syarat & Ketentuan.]]></string>
+    <string name="tambah_transaksi">Tambah Transaksi</string>
+    <string name="sepertinya_kamu_belum_memiliki_transaksi_hari_ini">Sepertinya kamu belum memiliki transaksi hari ini</string>
+    <string name="laporan_keuangan">Laporan Keuangan</string>
+    <string name="rencana_keuangan">Rencana Keuangan</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="catatan_keuangan">Catatan Keuangan</string>
+    <string name="pemasukan">Pemasukan</string>
+    <string name="pengeluaran">Pengeluaran</string>
+    <string name="harian">Harian</string>
+    <string name="mingguan">Mingguan</string>
+    <string name="bulanan">Bulanan</string>
+    <string name="jumlah">Jumlah</string>
+    <string name="diambil_dari">Diambil dari</string>
+    <string name="kategori">Kategori</string>
+    <string name="tanggal_transaksi">Tanggal Transaksi</string>
+    <string name="metode_transaksi">Metode Transaksi</string>
+    <string name="status_transaksi">Status Transaksi</string>
+    <string name="belum_lunas">Belum Lunas</string>
+    <string name="lunas">Lunas</string>
+    <string name="catatan">Catatan</string>
+    <string name="simpan">Simpan</string>
+    <string name="tujuan">Tujuan</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="pilih_tujuan">Pilih Tujuan</string>
+    <string name="pilih_kategori">Pilih Kategori</string>
+    <string name="opsional">Opsional</string>
+    <string name="pilih_pembayaran">Pilih Pembayaran</string>
+    <string name="statistik_keuangan">Statistik Keuangan</string>
+    <string name="semua">Semua</string>
+    <string name="bulan_ini">Bulan Ini</string>
+    <string name="minggu_ini">Minggu Ini</string>
+    <string name="hari_ini">Hari Ini</string>
+    <string name="ringkasan">Ringkasan</string>
+    <string name="total_uang_keseluruhan">Total Uang Keseluruhan</string>
+    <string name="grafik_keuangan">Grafik Keuangan</string>
+    <string name="rincian_pengeluaran">Rincian Pengeluaran</string>
+    <string name="detail_laporan_keuangan">Detail Laporan Keuangan</string>
+    <string name="cari_transaksi">Cari Transaksi</string>
+    <string name="download">Download</string>
+    <string name="filter">Filter</string>
+    <string name="tidak_lunas">Tidak Lunas</string>
+    <string name="terapkan">Terapkan</string>
+    <string name="reset">Reset</string>
+    <string name="download_catatan">Download Catatan</string>
+    <string name="excel">Excel</string>
+    <string name="pdf">PDF</string>
+    <string name="detail_transaksi">Detail Transaksi</string>
+    <string name="hapus">Hapus</string>
+    <string name="ubah">Ubah</string>
+    <string name="ubah_transaksi">Ubah Transaksi</string>
+    <string name="batal">Batal</string>
+    <string name="ubah_data">Ubah Data</string>
+    <string name="kategori_tambahan">Kategori Tambahan</string>
+    <string name="tambah_kategori">Tambah Kategori</string>
+    <string name="nama_kategori">Nama Kategori</string>
+    <string name="masukkan_nama_kategori">Masukkan Nama Kategori</string>
+    <string name="tambah">Tambah</string>
+    <string name="ubah_kategori">Ubah Kategori</string>
+    <string name="tunai">Tunai</string>
+    <string name="dompet_digital">Dompet Digital</string>
+    <string name="transfer_bank">Transfer Bank</string>
+    <string name="tujuan_pengeluaran">Tujuan Pengeluaran</string>
+    <string name="kas_umum">Kas Umum</string>
+    <string name="tujuan_financial">Tujuan Finansial</string>
+    <string name="property">Property</string>
+    <string name="pendidikan">Pendidikan</string>
+    <string name="kesehatan">Kesehatan</string>
+    <string name="hiburan">Hiburan</string>
+    <string name="lainnya">Lainnya</string>
+    <string name="nama_tujuan_finansial">Nama Tujuan Finansial</string>
+    <string name="masukkan_nama_tujuan_finansial">Masukkan Nama Tujuan Finansial</string>
+    <string name="tambahkan">Tambahkan</string>
+    <string name="ubah_tujuan_finansial">Ubah Tujuan Finansial</string>
+    <string name="Kesehatan">Kesehatan</string>
+    <string name="asuransi">Asuransi</string>
+    <string name="beli_rumah">Beli Rumah</string>
+    <string name="dana_terkumpul">Dana Terkumpul</string>
+    <string name="target_dana">Target Dana</string>
+    <string name="tambah_rencana">Tambah Rencana</string>
+    <string name="total_uang_kamu">Total Uang Kamu</string>
+    <string name="target_kamu">Target Kamu</string>
+    <string name="target_keuangan">Target Keuangan</string>
+    <string name="nama_finansial">Nama Finansial</string>
+    <string name="misal_beli_">Misal : Beli Rumah</string>
+    <string name="jumlah_uang_akan_dikumpulkan">Jumlah uang akan dikumpulkan</string>
+    <string name="target_uang_terkumpul">Target uang terkumpul</string>
+    <string name="februari_2022">Februari 2022</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="ok">OK</string>
+    <string name="pilih_tanggal">Pilih Tanggal</string>
+    <string name="bulan">Bulan</string>
+    <string name="tahun">Tahun</string>
+    <string name="utang_saya">Utang Saya</string>
+    <string name="utang_teman">Utang Teman</string>
+    <string name="riwayat_utang_piutang">Riwayat Utang Piutang</string>
+    <string name="sisa_seluruh_utang">Sisa Seluruh Utang</string>
+    <string name="laporan">Laporan</string>
+    <string name="detail_utang_piutang">Detail Utang Piutang</string>
+    <string name="total_hutang">Total Hutang</string>
+    <string name="tandai_lunas">Tandai Lunas</string>
+    <string name="Utang">Utang</string>
+    <string name="piutang">Piutang</string>
+    <string name="saya_utang">Saya Utang</string>
+    <string name="saya_memberi">Saya Memberi</string>
+    <string name="detail_hutang_piutang">Detail Hutang Piutang</string>
+    <string name="ubah_utang">Ubah Utang</string>
+    <string name="masukkan_jumlah">Masukkan Jumlah</string>
+    <string name="dipinjamkan_oleh">Dipinjamkan Oleh</string>
+    <string name="kontak_terbaru">Kontak Terbaru</string>
+    <string name="masukkan_tanggal_transaksi">Masukkan Tanggal Transaksi</string>
+    <string name="masukkan_catatan">Masukkan Catatan</string>
+    <string name="data_akan_dihapus_anda_yakin">Data akan dihapus, Anda yakin?</string>
+    <string name="data_anda_berhasil_dihapus">Data Anda berhasil dihapus</string>
+    <string name="kembali">Kembali</string>
+    <string name="profile_kontak">Profil Kontak</string>
+    <string name="informasi_umum">Informasi Umum</string>
+    <string name="nama_kontak">Nama Kontak</string>
+    <string name="nomor_handphone">Nomor Handphone</string>
+    <string name="masukkan_nomor_handphone">Masukkan Nomor Handphone</string>
+    <string name="alamat">Alamat</string>
+    <string name="masukkan_alamat">Masukkan Alamat</string>
+    <string name="hapus_kontak">Hapus Kontak</string>
+    <string name="update_kontak">Update Kontak</string>
+    <string name="ketikan_nama">Ketikan Nama</string>
+    <string name="pilih_nama">Pilih Nama</string>
+    <string name="profil">Profil</string>
+    <string name="selesaikan_profilmu">Selesaikan Profilmu</string>
+    <string name="nama">Nama</string>
+    <string name="email">Email</string>
+    <string name="keluar">Keluar</string>
+    <string name="hapus_akun">Hapus Akun</string>
+    <string name="seluruh_data_anda_akan_dihapus_dari_app_sikas_apakah_anda_yakin">Seluruh data Anda akan dihapus dari app SiKAS. Apakah Anda Yakin?</string>
+    <string name="ubah_profile">Ubah Profile</string>
+    <string name="profil_berhasil_diubah">Profil berhasil diubah</string>
+    <string name="masukkan_email">Masukkan Email (Prioritas)</string>
+    <string name="foto_profil">Foto Profil</string>
+    <string name="konfirmasi">Konfirmasi</string>
+    <string name="logout">Logout</string>
+    <string name="saldo_umum">Saldo Umum</string>
+    <string name="jatuh_tempo">Jatuh Tempo</string>
+    <string name="tambah_kontak">Tambah Kontak</string>
+    <string name="masukkan_nama_kontak">Masukkan Nama Kontak</string>
+    <string name="contoh_ari">Contoh : Ari</string>
+    <string name="nominal">Nominal</string>
+    <string name="bayar">Bayar</string>
+    <string name="tambah_pembayaran">Tambah Pembayaran</string>
+    <string name="masukkan_nominal">Masukkan Nominal</string>
+    <string name="Rp">Rp</string>
+    <string name="cari_data_anda">Cari data anda...</string>
+
+    <string-array name="month">
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+</resources>

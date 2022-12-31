@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DetailRiwayatHutang">
+
+    <android.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@color/netral_100" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/H"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/detail_utang_piutang"
+                android:textColor="@color/netral_100" />
+
+            <ImageView
+                android:id="@+id/btEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_edit" />
+        </RelativeLayout>
+
+
+    </android.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/ll_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivAkun"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:background="@drawable/circle_imageview_theme"
+            android:src="@drawable/ic_account" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/ivAkun"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNamaPenghutang"
+                style="@style/BodyPoppins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/netral_100" />
+
+            <TextView
+                android:id="@+id/tvNoHp"
+                style="@style/Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/netral_100" />
+
+            <TextView
+                android:id="@+id/tvJumlahUtang"
+                style="@style/Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/netral_100" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/circle_imageview_theme"
+            android:src="@drawable/ic_group_1628" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_detail_utang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:orientation="vertical"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@id/ll_profile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp">
+
+                <ImageView
+                    android:id="@+id/ivCardBold"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_card_bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/ivCardBold"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Poppins2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_hutang" />
+
+                    <TextView
+                        android:id="@+id/tvOrang1"
+                        style="@style/Caption2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:text="Tamara" />
+
+                    <TextView
+                        style="@style/Poppins2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ke" />
+
+                    <TextView
+                        android:id="@+id/tvOrang2"
+                        style="@style/Caption2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp"
+                        android:text="Saya" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_calendar_remove" />
+
+                    <TextView
+                        android:id="@+id/tvtglTransaksi"
+                        style="@style/Poppins3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="24 Feb 2022" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/netral_100" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:paddingVertical="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Poppins3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:gravity="start"
+                        android:text="@string/jumlah"
+                        android:textColor="@color/netral_300" />
+
+                    <TextView
+                        android:id="@+id/tvNominal"
+                        style="@style/Caption2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:textColor="@color/netral_500" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvTandaiLunas"
+                    style="@style/Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/thebutt_green_border"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/tandai_lunas"
+                    android:textAllCaps="false"
+                    android:textColor="@color/success_500" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/card_detail_utang">
+
+        <EditText
+            android:id="@+id/etCariCatatan"
+            style="@style/Poppins2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableEnd="@drawable/ic_search_normal"
+            android:ems="10"
+            android:hint="@string/cari_transaksi"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="10dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btFilter"
+            style="@style/Poppins2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/button_tersier"
+            android:drawableEnd="@drawable/ic_document_download"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/primary_300"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:text="@string/laporan"
+            android:textAllCaps="false"
+            android:textColor="@color/primary_300"
+            tools:targetApi="m" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_search">
+
+        <TextView
+            style="@style/Poppins2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/catatan"
+            android:textColor="@color/netral_500" />
+
+        <TextView
+            style="@style/Poppins2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Utang"
+            android:textAlignment="textEnd"
+            android:textColor="@color/netral_500"
+            android:visibility="gone" />
+
+        <TextView
+            style="@style/Poppins2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nominal"
+            android:textAlignment="textEnd"
+            android:textColor="@color/netral_500" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/garis2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:background="@color/primary_100"
+        app:layout_constraintTop_toBottomOf="@id/ll_tabel" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_detail_utang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@id/garis2"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_riwayat_detail_utang" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            style="@style/P3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/thebutt_red"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/saya_utang"
+            android:textAllCaps="false"
+            android:textColor="@color/netral_100"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btBayar"
+            style="@style/P3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/thebutt_green"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/bayar"
+            android:textAllCaps="false"
+            android:textColor="@color/netral_100" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

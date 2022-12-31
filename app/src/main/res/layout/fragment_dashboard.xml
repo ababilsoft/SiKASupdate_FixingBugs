@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.beranda.DashboardFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:background="@drawable/dashboard_top"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/maksiat"
+                    style="@style/P2"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="Hi, Muhammad Iqbal Maulana"
+                    android:textColor="@color/netral_100" />
+
+
+                <TextView
+                    android:id="@+id/tvNama"
+                    style="@style/P2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="Hi, Muhammad Iqbal Maulana"
+                    android:textColor="@color/netral_100" />
+
+                <TextView
+                    style="@style/Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Total Uang Kamu"
+                    android:textColor="@color/netral_100" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/P2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:text="Rp."
+                        android:textColor="@color/netral_100" />
+
+                    <TextView
+                        android:id="@+id/tvSaldo"
+                        style="@style/H1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="0"
+                        android:textColor="@color/netral_100" />
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:orientation="horizontal">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/chart_dashboard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@drawable/dashboard_rectangle" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:text="Saldo Kas Umum"
+                                        android:textColor="@color/netral_300" />
+
+                                    <TextView
+                                        android:id="@+id/tvSaldoKasUmum"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="Rp. 0"
+                                        android:textColor="@color/netral_800"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@drawable/dashboard_rectangle"
+                                    android:backgroundTint="#0096f4" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:text="Financial Planning"
+                                        android:textColor="@color/netral_300" />
+
+                                    <TextView
+                                        android:id="@+id/tvSeluruhSaldoFP"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="Rp. 0"
+                                        android:textColor="@color/netral_800"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="gone"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="@dimen/_2sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:src="@drawable/ic_illustration_0" />
+
+                        <TextView
+                            style="@style/Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_60sdp"
+                            android:layout_marginVertical="@dimen/_15sdp"
+                            android:gravity="center_horizontal"
+                            android:text="@string/sepertinya_kamu_belum_memiliki_transaksi_hari_ini"
+                            android:textColor="@color/black" />
+
+                        <Button
+                            android:id="@+id/bt_tambah_transaksi"
+                            style="@style/Body"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:background="@drawable/thebutt_blue_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="@string/tambah_transaksi"
+                            android:textAllCaps="false"
+                            android:textColor="@color/primary_500" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:background="@drawable/dashboard_square"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_15sdp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardhome"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/button_duo"
+                                android:gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                app:cardCornerRadius="10dp"
+                                app:cardMaxElevation="13dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:id="@+id/bt_pemasukan"
+                                        style="@style/TabButton"
+                                        android:layout_width="0dp"
+                                        android:layout_height="35dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/background_button_blue"
+                                        android:text="@string/pemasukan"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/netral_100"
+                                        android:textDirection="firstStrong" />
+
+                                    <Button
+                                        android:id="@+id/bt_pengeluaran"
+                                        style="@style/TabButton"
+                                        android:layout_width="0dp"
+                                        android:layout_height="35dp"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/background_button_white"
+                                        android:text="@string/pengeluaran"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/primary_300" />
+                                </LinearLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_pemasukan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <HorizontalScrollView
+                                android:id="@+id/ll_utang"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scrollbars="none"
+                                app:layout_constraintTop_toBottomOf="@id/card_utang">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginVertical="@dimen/_10sdp"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btHarian"
+                                        style="@style/Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_marginStart="@dimen/_15sdp"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:background="@drawable/thebutt_primari100"
+                                        android:paddingHorizontal="@dimen/_6sdp"
+                                        android:text="@string/harian"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/primary_500" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btMingguan"
+                                        style="@style/Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:layout_marginBottom="@dimen/_3sdp"
+                                        android:background="@drawable/button_tersier"
+                                        android:paddingHorizontal="@dimen/_6sdp"
+                                        android:text="@string/mingguan"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/primary_300" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btBulanan"
+                                        style="@style/Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:layout_marginBottom="@dimen/_3sdp"
+                                        android:background="@drawable/button_tersier"
+                                        android:paddingHorizontal="@dimen/_6sdp"
+                                        android:text="@string/bulanan"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/primary_300" />
+
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+
+                            <com.github.mikephil.charting.charts.LineChart
+                                android:id="@+id/chartPemasukan"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_150sdp"
+                                android:layout_margin="@dimen/_10sdp" />
+
+                            <com.anychart.AnyChartView
+                                android:id="@+id/anyChartPemasukan"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_150sdp"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:backgroundTint="@color/primary_500"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/netral_100" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

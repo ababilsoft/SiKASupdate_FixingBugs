@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.awandigital.sikas">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_new"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_new_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SiKAS.NoActionBar">
+        <activity
+            android:name=".activity.UbahProfile"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DetailKontakActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.UtangUbahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DetailRiwayatHutang"
+            android:exported="true" /> <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:label="@string/title_activity_main" -->
+        <!-- android:theme="@style/Theme.SiKAS.NoActionBar.NoActionBar" /> -->
+        <activity
+            android:name=".activity.TargetKeuangan"
+            android:exported="true" />
+        <activity
+            android:name=".activity.GrafikRencanaKeuangan"
+            android:exported="true" />
+        <activity
+            android:name=".activity.DetailRencanaKeuanganActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TujuanFinancialActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.MetodeTransaksiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UbahTransaksiActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.DetailTransaksiKeuangan"
+            android:exported="false" />
+        <activity
+            android:name=".fragment.transaksi.DetailLaporanKeuangan"
+            android:exported="false" />
+        <activity
+            android:name=".fragment.transaksi.LaporanKeuangan"
+            android:exported="false" />
+        <activity
+            android:name=".Registrasi"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity android:name=".WelcomePage" />
+
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Home"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name=".activity.BaseDetailTambahCatatanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.BaseDetailUtangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.BaseDetailTransaksiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="com.vansuita.pickimage.provider.PickImageFileProvider"
+            android:authorities="${applicationId}.com.vansuita.pickimage.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/picker_provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

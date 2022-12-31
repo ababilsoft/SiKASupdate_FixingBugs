@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/line"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="14dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tvCatatan"
+        style="@style/Poppins2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Utang Belanja"
+        android:textColor="@color/netral_500" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTgl"
+            style="@style/Poppins3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2 Jan 2022" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvNominalOUT"
+            style="@style/Poppins2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/danger_500" />
+
+        <TextView
+            android:id="@+id/tvNominalIn"
+            style="@style/Poppins2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textColor="@color/success_500" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

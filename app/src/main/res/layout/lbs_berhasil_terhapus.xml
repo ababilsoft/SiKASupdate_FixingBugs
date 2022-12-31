@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:background="@color/black_50" />
+
+    <TextView
+        style="@style/Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/data_anda_berhasil_dihapus"
+        android:textColor="@color/netral_500" />
+
+    <Button
+        style="@style/P3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/thebutt_blue"
+        android:gravity="center"
+        android:text="@string/kembali"
+        android:textAllCaps="false"
+        android:textColor="@color/netral_0" />
+
+
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lbs_download"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:background="@color/black_50" />
+
+    <TextView
+        style="@style/P3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:text="@string/download_catatan"
+        android:textColor="@color/netral_800" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_lainnya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/P3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pdf"
+                android:textColor="@color/netral_800" />
+
+            <TextView
+                style="@style/P3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/excel"
+                android:textColor="@color/netral_800" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/radioSex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end">
+
+            <RadioButton
+                android:id="@+id/rbPdf"
+                style="@style/P3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_tersier"
+                android:checked="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingEnd="10dp"
+                android:text="@string/pdf"
+                android:buttonTint="@color/primary_500"
+                android:textAlignment="textEnd"
+                android:textColor="@color/netral_800" />
+
+            <RadioButton
+                android:id="@+id/rbExcel"
+                style="@style/P3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingEnd="10dp"
+                android:buttonTint="@color/primary_500"
+                android:text="@string/excel"
+                android:textAlignment="textEnd"
+                android:textColor="@color/netral_800" />
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/P3"
+        android:id="@+id/btSimpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/thebutt_blue"
+        android:gravity="center"
+        android:text="@string/download"
+        android:textAllCaps="false"
+        android:textColor="@color/netral_0" />
+
+
+</LinearLayout>

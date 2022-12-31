@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrasi">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/H2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/daftar_pengguna_baru" />
+
+            <TextView
+                style="@style/P1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lengkapi_data_anda_utk_mnjd_member_baru" />
+
+            <TextView
+                style="@style/P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/nama_lengkap" />
+
+            <EditText
+                android:id="@+id/etNamaLengkap"
+                style="@style/Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="@string/masukkan_nama"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+            <TextView
+                style="@style/P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/username" />
+
+            <EditText
+                android:id="@+id/etUsername"
+                style="@style/Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="@string/masukkan_username"
+                android:inputType="text"
+                android:padding="10dp" />
+
+            <TextView
+                style="@style/P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/password" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
+                app:hintEnabled="false"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/netral_300">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/til_password"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rounded_edit_text"
+                    android:hint="@string/masukkan_password"
+                    android:inputType="textPassword"
+                    android:padding="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                style="@style/P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="@string/masukkan_email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp" />
+
+            <TextView
+                style="@style/BodyPoppins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/dgn_mendaftar_anda_mematuhi" />
+
+            <Button
+                android:id="@+id/btDaftarBaru"
+                style="@style/P3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/thebutt_blue"
+                android:text="@string/daftar_baru"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btMasuk"
+                style="@style/P1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/thebutt_blue_border"
+                android:text="@string/masuk"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_500" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,477 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.transaksi.catatan.CatatanKeuanganTambahFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_kategori_catatan_keuangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardhome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/card_catatan"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:cardCornerRadius="10dp"
+                        app:cardMaxElevation="13dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/bt_pemasukan"
+                                style="@style/TabButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/button_primary_catatan"
+                                android:text="@string/pemasukan"
+                                android:textAllCaps="false"
+                                android:textColor="@color/primary_500" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/bt_pengeluaran"
+                                style="@style/TabButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/card_catatan"
+                                android:text="@string/pengeluaran"
+                                android:textAllCaps="false"
+                                android:textColor="@color/primary_300" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pengeluaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/ll_kategori_catatan_keuangan">
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/jumlah"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_jumlah"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:ems="10"
+                    android:hint="Rp. "
+                    android:digits="0123456789,."
+                    android:inputType="numberDecimal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/diambil_dari"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_diambil_dari"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="@string/pilih_tujuan"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/kategori"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_kategori"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="@string/pilih_kategori"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/tanggal_transaksi"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_tanggal_transaksi"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="Pilih Transaksi"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/metode_transaksi"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_metode_transaksi"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="@string/pilih_pembayaran"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/status_transaksi"
+                    android:textColor="@color/netral_800" />
+
+                <RadioGroup
+                    android:id="@+id/rgStatusTransaksi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_lunas"
+                        style="@style/Body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#E0E0E0"
+                        android:text="@string/lunas" />
+
+                    <RadioButton
+                        android:id="@+id/rb_belum"
+                        style="@style/Body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:buttonTint="#E0E0E0"
+                        android:text="@string/belum_lunas" />
+
+                </RadioGroup>
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/catatan"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_opsional"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:ems="10"
+                    android:hint="@string/opsional"
+                    android:inputType="text"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btSimpanPengeluaran"
+                    style="@style/P3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/button_primary"
+                    android:gravity="center"
+                    android:text="@string/simpan"
+                    android:textAllCaps="false"
+                    android:textColor="@color/netral_0" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pemasukan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+
+                app:layout_constraintTop_toBottomOf="@id/ll_kategori_catatan_keuangan">
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/jumlah"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_jumlah_pemasukan"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:ems="10"
+                    android:hint="Rp. "
+                    android:inputType="number"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/tujuan"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_tujuan_pemasukan"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="@string/pilih_tujuan"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/kategori"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_kategori_pemasukan"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="@string/pilih_kategori"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/tanggal"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_tanggal_pemasukan"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="Pilih Tanggal"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/metode_transaksi"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_metode_transaksi_pemasukan"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="Pilih Pembayaran"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+
+                <TextView
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/catatan"
+                    android:textColor="@color/netral_800" />
+
+                <EditText
+                    android:id="@+id/et_opsional_pemasukan"
+                    style="@style/Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/login_text_field"
+                    android:ems="10"
+                    android:hint="@string/opsional"
+                    android:inputType="text"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btSimpanPemasukan"
+                    style="@style/P3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/button_primary"
+                    android:gravity="center"
+                    android:text="Simpan"
+                    android:textAllCaps="false"
+                    android:textColor="@color/netral_0" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

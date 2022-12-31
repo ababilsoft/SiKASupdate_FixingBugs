@@ -1,0 +1,550 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_fragment_transaksi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.TransaksiFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:background="@drawable/dashboard_top"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/tvNama"
+                    style="@style/P2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="Hi,"
+                    android:textColor="@color/netral_100" />
+
+                <TextView
+                    style="@style/Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Total Uang Kamu"
+                    android:textColor="@color/netral_100" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/P2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:text="Rp."
+                        android:textColor="@color/netral_100" />
+
+                    <TextView
+                        android:id="@+id/tvSaldo"
+                        style="@style/H1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:text=""
+                        android:textColor="@color/netral_100" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_25sdp"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:drawableStart="@drawable/ic_arrow_up"
+                            android:drawableTint="@color/success_500"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="-"
+                            android:textColor="@color/netral_100"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:drawableStart="@drawable/ic_arrow_down"
+                            android:drawableTint="@color/danger_500"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="-"
+                            android:textColor="@color/netral_100"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/dashboard_square"
+                        app:cardCornerRadius="@dimen/_20sdp"
+                        app:cardElevation="@dimen/_4sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_100sdp"
+                            android:orientation="horizontal">
+
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/chart_transaksi"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:layout_weight="1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:background="@drawable/dashboard_rectangle" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            style="@style/Caption"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_10sdp"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:text="Saldo Kas Umum"
+                                            android:textColor="@color/netral_300" />
+
+                                        <TextView
+                                            android:id="@+id/tvSaldoKasUmum"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_10sdp"
+                                            android:fontFamily="@font/poppins_semibold"
+                                            android:text="Rp."
+                                            android:textColor="@color/netral_800"
+                                            android:textSize="@dimen/_10sdp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:background="@drawable/dashboard_rectangle"
+                                        android:backgroundTint="#0096f4" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            style="@style/Caption"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_10sdp"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:text="Financial Planning"
+                                            android:textColor="@color/netral_300" />
+
+                                        <TextView
+                                            android:id="@+id/tvSeluruhSaldoFP"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_10sdp"
+                                            android:fontFamily="@font/poppins_semibold"
+                                            android:text="Rp."
+                                            android:textColor="@color/netral_800"
+                                            android:textSize="@dimen/_10sdp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <!--                batas  -->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bt_laporan_keuangan"
+                    style="@style/P2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/thebutt_blue_border"
+                    android:drawableStart="@drawable/ic_graph"
+                    android:drawableEnd="@drawable/ic_arrow_right"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableTint="@color/primary_500"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:text="@string/laporan_keuangan"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/primary_500" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/P1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_weight="1"
+                            android:text="@string/rencana_keuangan"
+                            android:textColor="@color/netral_800" />
+
+                        <TextView
+                            android:id="@+id/bt_lihat_semua_rencana"
+                            style="@style/Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:text="@string/lihat_semua"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_500" />
+
+                    </LinearLayout>
+
+                    <!--                    RecyclerView atau statis?-->
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_rencana_keuangan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/item_transaksi_rencana_keuangan" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="@dimen/_110sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:outlineSpotShadowColor="@color/netral_800"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/_20sdp"
+                        app:cardElevation="@dimen/_6sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/P2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:drawableStart="@drawable/ic_home"
+                                    android:drawablePadding="@dimen/_10sdp"
+                                    android:drawableTint="@color/primary_500"
+                                    android:gravity="center_vertical"
+                                    android:text="Beli Rumah"
+                                    android:textColor="@color/primary_400" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_15sdp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:gravity="end"
+                                    android:text=">"
+                                    android:textColor="@color/netral_800"
+                                    android:textSize="@dimen/_24sdp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:background="@color/netral_300"
+                                android:outlineAmbientShadowColor="@color/white"
+                                android:outlineSpotShadowColor="@color/white" />
+
+                            <TextView
+                                style="@style/Caption1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_6sdp"
+                                android:text="Dana Terkumpul"
+                                android:textColor="@color/netral_400" />
+
+                            <TextView
+                                android:id="@+id/tv_value_dana_terkumpul"
+                                style="@style/P2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_6sdp"
+                                android:text="Rp.300.000"
+                                android:textColor="@color/netral_800" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/P1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_16sdp"
+                            android:layout_weight="1"
+                            android:text="@string/catatan_keuangan"
+                            android:textColor="@color/netral_800" />
+
+                        <TextView
+                            android:id="@+id/bt_lihat_semua_catatan"
+                            style="@style/Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:text="@string/lihat_semua"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/primary_500"
+                            android:textSize="@dimen/_9ssp" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_15sdp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/cardhome"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:background="@drawable/button_duo"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardMaxElevation="13dp">
+
+                                    <LinearLayout
+
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <Button
+                                            android:id="@+id/bt_pemasukan"
+                                            style="@style/TabButton"
+                                            android:layout_width="@dimen/_140sdp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/background_button_blue"
+                                            android:text="@string/pemasukan"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/netral_100"
+                                            android:textDirection="firstStrong" />
+
+                                        <Button
+                                            android:id="@+id/bt_pengeluaran"
+                                            style="@style/TabButton"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/background_button_white"
+                                            android:text="@string/pengeluaran"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/primary_300" />
+                                    </LinearLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_pemasukan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvTotalHarian"
+                                    style="@style/Caption2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:gravity="end"
+                                    android:text="Rp0"
+                                    android:textColor="@color/netral_800" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvPemasukanCatatanKeuangan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:itemCount="1"
+                                    tools:listitem="@layout/item_transaksi_catatan_keuangan" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_pengeluaran"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+
+                                <TextView
+                                    android:id="@+id/tvTotalHarianPengeluaran"
+                                    style="@style/Caption2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:gravity="end"
+                                    android:textColor="@color/netral_800" />
+
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvPengeluaranCatatanKeuangan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:itemCount="1"
+                                    tools:listitem="@layout/item_transaksi_catatan_keuangan" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/primary_500"
+        android:contentDescription="submit"
+        android:src="@drawable/add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/netral_100" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
