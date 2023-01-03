@@ -340,7 +340,7 @@ public class GrafikRencanaKeuangan extends AppCompatActivity {
 
         if (cursorproduct.moveToFirst()) {
             do {
-                String[] date = cursorproduct.getString(13).split(",");
+                String[] date = cursorproduct.getString(13).split(" ");
                 String[] time = date[1].split(":");
                 SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
                 dateFormat.setTimeZone(TimeZone.getDefault());
@@ -393,7 +393,7 @@ public class GrafikRencanaKeuangan extends AppCompatActivity {
 
         if (cursorproduct.moveToFirst()) {
             do {
-                String[] date = cursorproduct.getString(13).split(",");
+                String[] date = cursorproduct.getString(13).split(" ");
                 String[] time = date[1].split(":");
                 SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
                 dateFormat.setTimeZone(TimeZone.getDefault());

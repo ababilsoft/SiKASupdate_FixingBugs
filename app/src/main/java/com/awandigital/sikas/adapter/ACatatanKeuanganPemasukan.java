@@ -40,7 +40,7 @@ public class ACatatanKeuanganPemasukan extends RecyclerView.Adapter<ACatatanKeua
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MCatatanKeuanganMasuk mPemasukan = arrayList.get(position);
         if (mPemasukan.getJenisTransaksi().equals("pemasukan")) {
-            holder.binding.tvCostMasuk.setText("+Rp" + DecimalsFormat.priceWithoutDecimal(mPemasukan.getNominal()));
+            holder.binding.tvCostMasuk.setText("+ Rp." + DecimalsFormat.priceWithoutDecimal(mPemasukan.getNominal()));
             holder.binding.tvKategori.setText(mPemasukan.getKategori());
             holder.binding.tvTgl.setText(mPemasukan.getTglTransaksi());
             holder.binding.tvTujuanFinansial.setText(mPemasukan.getTujuanFinansial());

@@ -20,8 +20,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String database_name = "sikas.db";
     Calendar c = Calendar.getInstance();
-    SimpleDateFormat formatlengkap = new SimpleDateFormat("EEEE, dd MMMM yyyy, HH:mm", new Locale("id", "ID"));
-    SimpleDateFormat created_at = new SimpleDateFormat("yyyy-MM-dd, HH:mm:ss", new Locale("id", "ID"));
+    SimpleDateFormat formatlengkap = new SimpleDateFormat("EEEE dd MMMM yyyy HH:mm", new Locale("id", "ID"));
+    SimpleDateFormat created_at = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("id", "ID"));
     SimpleDateFormat formattgl = new SimpleDateFormat("dd-MM-yyyy", new Locale("id", "ID"));
     SimpleDateFormat formatbulan = new SimpleDateFormat("MM", new Locale("id", "ID"));
     SimpleDateFormat formattahun = new SimpleDateFormat("yyyy", new Locale("id", "ID"));
@@ -326,7 +326,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor MonthlygetAllCatatan() {
-        String query = "SELECT * FROM catatan_transaksi WHERE created_at BETWEEN datetime('now', 'start of month') AND datetime('now', 'localtime')";
+        String query = "SELECT * FROM catatan_transaksi WHERE DATE(created_at) BETWEEN DATE('now', 'localtime', 'start of month') AND DATE('now', 'localtime')";
         Cursor cur = db.rawQuery(query, null);
         AndLog.ShowLog("queryAllCatatan", query);
         return cur;

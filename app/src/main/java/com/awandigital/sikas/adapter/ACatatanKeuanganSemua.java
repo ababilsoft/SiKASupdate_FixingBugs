@@ -45,12 +45,12 @@ public class ACatatanKeuanganSemua extends RecyclerView.Adapter<ACatatanKeuangan
         holder.binding.tvKategori.setText(semua.getKategori());
         if (semua.getJenisTransaksi().equals("pengeluaran")) {
             holder.binding.tvSumberDana.setText(semua.getDiambilDari());
-            holder.binding.tvCostKeluar.setText("-Rp" + DecimalsFormat.priceWithoutDecimal(semua.getNominal()));
-            holder.binding.tvCostMasuk.setText("Rp0");
+            holder.binding.tvCostKeluar.setText("- Rp." + DecimalsFormat.priceWithoutDecimal(semua.getNominal()));
+            holder.binding.tvCostMasuk.setText("Rp.0");
         } else if (semua.getJenisTransaksi().equals("pemasukan")) {
             holder.binding.tvSumberDana.setText(semua.getTujuanTabungan());
-            holder.binding.tvCostMasuk.setText("+Rp" + DecimalsFormat.priceWithoutDecimal(semua.getNominal()));
-            holder.binding.tvCostKeluar.setText("Rp0");
+            holder.binding.tvCostMasuk.setText("+ Rp." + DecimalsFormat.priceWithoutDecimal(semua.getNominal()));
+            holder.binding.tvCostKeluar.setText("Rp.0");
         }
 
 

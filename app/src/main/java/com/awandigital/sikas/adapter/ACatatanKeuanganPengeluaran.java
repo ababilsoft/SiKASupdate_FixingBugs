@@ -41,7 +41,7 @@ public class ACatatanKeuanganPengeluaran extends RecyclerView.Adapter<ACatatanKe
         MCatatanKeuanganKeluar mPengeluaran = arrayList.get(position);
         if (mPengeluaran.getJenisTransaksi().equals("pengeluaran")) {
             holder.binding.tvKategori.setText(mPengeluaran.getKategori());
-            holder.binding.tvCostKeluar.setText("- Rp" + DecimalsFormat.priceWithoutDecimal(mPengeluaran.getNominal()));
+            holder.binding.tvCostKeluar.setText("- Rp." + DecimalsFormat.priceWithoutDecimal(mPengeluaran.getNominal()));
             holder.binding.tvDiambilDari.setText(mPengeluaran.getDiambilDari());
             holder.binding.tvtglTransaksi.setText(mPengeluaran.getTglTransaksi());
         }

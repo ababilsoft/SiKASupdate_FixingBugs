@@ -517,119 +517,6 @@ public class DashboardFragment extends Fragment {
 
     }
 
-    private void linePDay() {
-        anyChartView = binding.anyChartPemasukan;
-        cartesian = AnyChart.column();
-        List<DataEntry> data = new ArrayList<>();
-        Cursor cursorproduct;
-
-        cursorproduct = dbHelper.getFilterPemasukan();
-
-        //if the cursor has some data
-        if (cursorproduct.moveToFirst()) {
-            //looping through all the records
-            do {
-                //pushing each record in the employee list
-                data.add(new ValueDataEntry(cursorproduct.getString(1), // tgl transaksi
-                        cursorproduct.getInt(0) // nominal
-
-                ));
-            } while (cursorproduct.moveToNext());
-        }
-        if (data.isEmpty()) {
-//            GlobalToast.ShowToast(mActivity, "No items Pemasukan Found in database");
-        }
-
-        //closing the cursor
-        cursorproduct.close();
-
-        Column column = cartesian.column(data);
-        column.tooltip().titleFormat("{%X}").position(Position.CENTER_BOTTOM).anchor(Anchor.CENTER_BOTTOM).offsetX(0d).offsetY(5d).format("Rp{%Value}{groupsSeparator: }");
-
-        cartesian.animation(true);
-        cartesian.xZoom();
-
-        cartesian.yScale().minimum(0d);
-
-        cartesian.yAxis(0).labels().format("Rp{%Value}{groupsSeparator: }");
-
-        cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
-        cartesian.interactivity().hoverMode(HoverMode.BY_X);
-
-//        cartesian.xAxis(0).title("Product");
-//        cartesian.yAxis(0).title("Revenue");
-
-        anyChartView.setChart(cartesian);
-        anyChartView.refreshDrawableState();
-
-    }
-
-    private void linePWeekly() {
-        anyChartView = binding.anyChartPemasukan;
-        cartesian = AnyChart.column();
-        List<DataEntry> data = new ArrayList<>();
-        Cursor cursorproduct;
-
-        cursorproduct = dbHelper.getFilterPemasukanWeekly();
-
-        //if the cursor has some data
-        if (cursorproduct.moveToFirst()) {
-            //looping through all the records
-            do {
-                //pushing each record in the employee list
-                data.add(new ValueDataEntry(cursorproduct.getString(1), // tgl transaksi
-                        cursorproduct.getInt(0) // nominal
-
-                ));
-            } while (cursorproduct.moveToNext());
-        }
-        if (data.isEmpty()) {
-            GlobalToast.ShowToast(mActivity, "No items Pemasukan Found in database");
-        }
-
-        //closing the cursor
-        cursorproduct.close();
-
-        Column column = cartesian.column(data);
-        column.tooltip().titleFormat("{%X}").position(Position.CENTER_BOTTOM).anchor(Anchor.CENTER_BOTTOM).offsetX(0d).offsetY(5d).format("Rp{%Value}{groupsSeparator: }");
-
-        cartesian.animation(true);
-        cartesian.xZoom();
-        cartesian.title("Top 10 Cosmetic Products by Revenue");
-
-        cartesian.yScale().minimum(0d);
-
-        cartesian.yAxis(0).labels().format("Rp{%Value}{groupsSeparator: }");
-
-        cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
-        cartesian.interactivity().hoverMode(HoverMode.BY_X);
-
-//        cartesian.xAxis(0).title("Product");
-//        cartesian.yAxis(0).title("Revenue");
-
-        anyChartView.setChart(cartesian);
-        anyChartView.refreshDrawableState();
-
-    }
-
-//    private class CustomDataEntry extends ValueDataEntry {
-//
-//        CustomDataEntry(String x, Number value) {
-//            super(x, value);
-//        }
-//
-//    }
-
-    private class CustomDataEntry extends ValueDataEntry {
-
-        CustomDataEntry(String x, Number value, Number value2, Number value3) {
-            super(x, value);
-            setValue("value2", value2);
-            setValue("value3", value3);
-        }
-
-    }
-
     private ArrayList<Entry> dataValues() {
         ArrayList<Entry> dataVals = new ArrayList<Entry>();
         Cursor cursorproduct;
@@ -638,7 +525,7 @@ public class DashboardFragment extends Fragment {
 
         if (cursorproduct.moveToFirst()) {
             do {
-                String[] date = cursorproduct.getString(13).split(",");
+                String[] date = cursorproduct.getString(13).split(" ");
                 String[] time = date[1].split(":");
                 SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
                 dateFormat.setTimeZone(TimeZone.getDefault());
@@ -691,7 +578,7 @@ public class DashboardFragment extends Fragment {
 
         if (cursorproduct.moveToFirst()) {
             do {
-                String[] date = cursorproduct.getString(13).split(",");
+                String[] date = cursorproduct.getString(13).split(" ");
                 String[] time = date[1].split(":");
                 SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
                 dateFormat.setTimeZone(TimeZone.getDefault());
