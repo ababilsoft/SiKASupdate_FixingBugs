@@ -1,14 +1,17 @@
 package com.awandigital.sikas.activity;
 
+import static android.content.ContentValues.TAG;
 import static com.awandigital.sikas.db.DatabaseHelper.database_name;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.awandigital.sikas.R;
@@ -47,10 +50,10 @@ public class DetailTransaksiKeuangan extends AppCompatActivity {
         if (cursor.moveToNext()) {
             String jenis_transaksi = cursor.getString(7);
             if (jenis_transaksi.equals("pemasukan")) {
-                binding.tvCost.setTextColor(R.color.success_400);
+                binding.tvCost.setTextColor(getResources().getColor(R.color.success_400));
                 binding.tvJenisTransaksi.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_arrow_circle_up_g, 0, 0, 0);
             }
-            String status_transaksi = cursor.getString(12);
+            String status_transaksi = cursor.getString(8);
 
             String tgl = cursor.getString(5);
             String nama_transaksi = cursor.getString(14);
@@ -61,6 +64,13 @@ public class DetailTransaksiKeuangan extends AppCompatActivity {
             binding.tvJenisTransaksi.setText(jenis_transaksi);
             if (status_transaksi != null) {
                 binding.tvStatusPelunasan.setText(status_transaksi);
+                if (status_transaksi.equals("Lunas")) {
+                    binding.tvStatusPelunasan.setTextColor(getResources().getColor(R.color.success_400));
+                    binding.tvStatusPelunasan.setBackground(getDrawable(R.drawable.rounded_green));
+                } else {
+                    binding.tvStatusPelunasan.setBackground(getDrawable(R.drawable.rounded_white));
+                    binding.tvStatusPelunasan.setTextColor(getResources().getColor(R.color.danger_400));
+                }
             } else {
                 binding.tvStatusPelunasan.setVisibility(View.GONE);
             }
@@ -80,6 +90,17 @@ public class DetailTransaksiKeuangan extends AppCompatActivity {
 //                intent.putExtra("jenisTransakasi", binding.tvJenisTransaksi.getText());
                 intent.putExtra("id", id);
                 startActivity(intent);
+            }
+        });
+
+        binding.btHapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dbHelper.deleteCatatanKeuangan(id);
+                Intent intent = new Intent("catatanKeuangan-state");
+                intent.putExtra("refresh", "data");
+                LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                finish();
             }
         });
     }

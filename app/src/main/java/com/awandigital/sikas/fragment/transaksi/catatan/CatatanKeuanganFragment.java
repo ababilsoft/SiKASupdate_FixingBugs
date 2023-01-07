@@ -6,6 +6,10 @@ import static com.awandigital.sikas.db.DatabaseHelper.database_name;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -22,9 +26,11 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.awandigital.sikas.R;
+import com.awandigital.sikas.activity.DetailRiwayatHutang;
 import com.awandigital.sikas.databinding.FragmentCatatanKeuanganBinding;
 import com.awandigital.sikas.db.DatabaseHelper;
 import com.awandigital.sikas.model.MCatatanKeuanganKeluar;
@@ -64,6 +70,71 @@ public class CatatanKeuanganFragment extends Fragment {
     SQLiteDatabase mDatabase;
     OwnProgressDialog pDialog;
     DatabaseHelper dbHelper;
+
+    public BroadcastReceiver receiveUpdate = new BroadcastReceiver() {
+        @SuppressLint("Range")
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+
+            String value = intent.getStringExtra("refresh");
+            Log.i(TAG, "onReceive: " + value);
+            if (value.equals("data")) {
+                switch (vTab) {
+                    case "Semua":
+                        switch (vSubTab) {
+                            case "Semua":
+                                catatanKeuanganSemua();
+                                break;
+                            case "monthly":
+                                MonthlycatatanKeuanganSemua();
+                                break;
+                            case "weekly":
+                                WeeklycatatanKeuanganSemua();
+                                break;
+                            case "day":
+                                DaycatatanKeuanganSemua();
+                                break;
+                        }
+                        return;
+                    case "pemasukan":
+                        switch (vSubTab) {
+                            case "Semua":
+                                catatanKeuanganSemua();
+                                break;
+                            case "monthly":
+                                MonthlycatatanKeuanganKeluar();
+                                break;
+                            case "weekly":
+                                WeeklycatatanKeuanganKeluar();
+                                break;
+                            case "day":
+                                DaycatatanKeuanganKeluar();
+                                break;
+                        }
+                        break;
+                    case "pengeluaran":
+                        switch (vSubTab) {
+                            case "Semua":
+                                catatanKeuanganSemua();
+                                break;
+                            case "monthly":
+                                MonthlycatatanKeuanganMasuk();
+                                break;
+                            case "weekly":
+                                WeeklycatatanKeuanganMasuk();
+                                break;
+                            case "day":
+                                DaycatatanKeuanganMasuk();
+                                break;
+                        }
+
+                        break;
+                }
+            }
+
+        }
+    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -429,8 +500,10 @@ public class CatatanKeuanganFragment extends Fragment {
         });
 
 
-        return binding.getRoot();
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(receiveUpdate,
+                new IntentFilter("catatanKeuangan-state"));
 
+        return binding.getRoot();
 
     }
 
