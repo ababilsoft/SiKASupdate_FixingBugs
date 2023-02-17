@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -899,8 +900,11 @@ public class DashboardFragment extends Fragment {
 
         grandSaldo = saldoKU + saldoFP;
         binding.tvSaldo.setText(DecimalsFormat.priceWithoutDecimal(String.valueOf(grandSaldo)));
+
         pieChart();
 
+        lineChart("day", jT);
+        barChart();
     }
 
     private void listDataRencanaKeuangan() {

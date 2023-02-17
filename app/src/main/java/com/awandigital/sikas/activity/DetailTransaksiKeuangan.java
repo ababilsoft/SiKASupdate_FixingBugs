@@ -94,9 +94,33 @@ public class DetailTransaksiKeuangan extends AppCompatActivity {
         });
 
         binding.btHapus.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("Range")
             @Override
             public void onClick(View view) {
-                dbHelper.deleteCatatanKeuangan(id);
+                Cursor cursor = dbHelper.getAllCatatanById(id);
+                if (cursor.moveToNext()) {
+                    String nominalTransaksi = cursor.getString(1);
+
+
+                    Cursor kasUmumCursor = dbHelper.dataKasUmum();
+                    String saldoKas = "0";
+
+                    if (kasUmumCursor.moveToFirst() && kasUmumCursor.getCount() > 0) {
+                        if (kasUmumCursor.getString(kasUmumCursor.getColumnIndex("nominal")) != null) {
+                            saldoKas = kasUmumCursor.getString(kasUmumCursor.getColumnIndex("nominal"));
+                        }
+                    }
+
+                    dbHelper.deleteCatatanKeuangan(id);
+                    String jenis_transaksi = cursor.getString(7);
+                    if (jenis_transaksi.equals("pemasukan")) {
+                        dbHelper.updateKasUmum(String.valueOf(Integer.parseInt(saldoKas) - Integer.parseInt(nominalTransaksi)));
+                    } else {
+                        dbHelper.updateKasUmum(String.valueOf(Integer.parseInt(saldoKas) + Integer.parseInt(nominalTransaksi)));
+                    }
+
+                }
+
                 Intent intent = new Intent("catatanKeuangan-state");
                 intent.putExtra("refresh", "data");
                 LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
